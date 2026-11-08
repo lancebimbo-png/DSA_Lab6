@@ -1,0 +1,204 @@
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: The list is empty. No students to display.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Error: Student ID 101 already exists.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID to find: Found: ID: 102 | Name: Bob | Grade: 88.0
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID to find: Error: Student with ID 999 not found.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter new Grade: Grade updated successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter new Grade: Error: Student with ID 999 not found.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID to remove: Student removed successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID to remove: Error: Student with ID 999 not found.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: --- Student List ---
+ID: 102 | Name: Bob | Grade: 88.0
+ID: 103 | Name: Charlie | Grade: 88.0
+ID: 104 | Name: Diana | Grade: 97.0
+ID: 106 | Name: Bob | Grade: 85.0
+--------------------
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Students sorted by name (A to Z).
+--- Student List ---
+ID: 102 | Name: Bob | Grade: 88.0
+ID: 106 | Name: Bob | Grade: 85.0
+ID: 103 | Name: Charlie | Grade: 88.0
+ID: 104 | Name: Diana | Grade: 97.0
+--------------------
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Students sorted by grade (highest to lowest).
+--- Student List ---
+ID: 104 | Name: Diana | Grade: 97.0
+ID: 102 | Name: Bob | Grade: 88.0
+ID: 103 | Name: Charlie | Grade: 88.0
+ID: 106 | Name: Bob | Grade: 85.0
+--------------------
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Goodbye!
