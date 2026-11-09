@@ -1,6 +1,7 @@
 # Lab 6 — ArrayList for Object Data Storage
 
 CpE 211 • Data Structures and Algorithms • Cor Jesu College, College of Engineering
+Lance Xyzherlee A. Bimbo
 
 ## 1. Overview
 
