@@ -1,0 +1,37 @@
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Enter ID: Enter Name: Enter Grade: Invalid grade. Please enter a number.
+Enter Grade: Invalid grade. Please enter a number.
+Enter Grade: Student added successfully.
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: --- Student List ---
+ID: 101 | Name: Alice | Grade: 92.0
+--------------------
+
+===== Student Manager Menu =====
+1. Add Student
+2. Find Student by ID
+3. Update Student Grade
+4. Remove Student by ID
+5. Display All Students
+6. Sort by Name
+7. Sort by Grade
+0. Exit
+Enter your choice: Goodbye!

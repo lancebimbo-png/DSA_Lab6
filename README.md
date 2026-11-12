@@ -23,9 +23,10 @@ interactive testing, and a console menu drives every required operation.
 | `Student.java` | Data class: `private` fields `id`, `name`, `grade`; constructor, getters, setters, `toString()` |
 | `StudentManager.java` | Holds `ArrayList<Student>` and all required methods; `main()` runs the Scanner menu |
 | `StudentGUI.java` | **Bonus** — Swing `JFrame` with a `JTable` view of the same `StudentManager` (own `main()`) |
-| `Lab6Tests.java` | Standalone test harness (no JUnit) — 41 PASS/FAIL checks over every required method |
+| `Lab6Tests.java` | Standalone test harness (no JUnit) — 44 PASS/FAIL checks over every required method |
 | `test-input.txt` | Scripted menu input used to produce the test log (reproduces every test case) |
 | `test-run.log` | Console log of a successful full run — the submission evidence |
+| `test-input-badgrade.txt` / `test-run-badgrade.log` | Extra run: non-numeric and blank grade are rejected and re-asked (no crash) |
 
 ### Required methods (as specified by the lab)
 
@@ -107,8 +108,8 @@ Two forms of evidence:
 1. **`Lab6Tests.java`** — automated unit-test harness, run with `java Lab6Tests`:
 
 ```text
-Total checks: 41
-Passed: 41
+Total checks: 44
+Passed: 44
 Failed: 0
 RESULT: PASS
 ```
@@ -136,6 +137,7 @@ RESULT: PASS
 | 11 | Display all | `5` | All 4 records printed | ✅ 102, 103, 104, 106 listed between header/footer |
 | 12 | Sort equal names | `6` (two records named Bob) | A–Z order; ties keep prior order | ✅ `102 Bob`, `106 Bob`, `Charlie`, `Diana` — 102 before 106, matching insertion order |
 | 13 | Sort equal grades | `7` (102 and 103 both 88) | Highest→lowest; ties keep prior order | ✅ `97`, `88 (102)`, `88 (103)`, `85` — 102 before 103 |
+| 15 | Bad grade input | `1` → `101/Alice`, grade `abc`, then blank, then `92` | Re-prompt, no crash | ✅ "Invalid grade. Please enter a number." twice, then added (`test-run-badgrade.log`) |
 | 14 | Exit | `0` | Clean exit | ✅ "Goodbye!", exit code 0 |
 
 Every required case from the lab guide — add several, find existing/missing, update and
@@ -202,7 +204,7 @@ handles it internally.
 Both sorts build an anonymous inner class implementing `Comparator<Student>` (the lab
 requires this form rather than a lambda) and pass it to `Collections.sort`:
 
-* **By name** — `a.getName().compareTo(b.getName())`: negative → `a` first, 0 → equal,
+* **By name** — `a.getName().compareToIgnoreCase(b.getName())` (so `bob` sorts between `Alice` and `Charlie`): negative → `a` first, 0 → equal,
   positive → `b` first.
 * **By grade** — manual comparison returning `-1`/`1`/`0` to order highest first.
 
@@ -247,7 +249,7 @@ line, and the test was re-run to produce the clean `test-run.log` submitted here
 **Independent verification performed:**
 
 * `javac *.java` compiles with zero errors/warnings
-* `java Lab6Tests` — 41 checks, 41 passed, 0 failed, exit code 0
+* `java Lab6Tests` — 44 checks, 44 passed, 0 failed, exit code 0
 * full console test executed against the real menu; all 14 cases match the expected
   column (Section 4)
 * edge cases hand-checked: empty list, duplicate ID, missing ID on find/update/remove,
@@ -268,7 +270,7 @@ line, and the test was re-run to produce the clean `test-run.log` submitted here
 > to the end shifts one position to the right, then the new value is written. On
 > average that touches half of the `n` elements, worst case all of them, so **O(n)**.
 > Inserting at the very end is the exception — nothing shifts — which is why appending
-> is amortized O(1) (only the occasional array doubling costs O(n)).
+> is amortized O(1) (only the occasional resize, ~1.5× growth, costs O(n)).
 
 ### Likely follow-up questions
 
@@ -312,7 +314,7 @@ grades.
 | Item | Result |
 |---|---|
 | `javac *.java` | exit 0, no errors |
-| `java Lab6Tests` (unit-test harness) | 41/41 PASS, exit code 0 |
+| `java Lab6Tests` (unit-test harness) | 44/44 PASS, exit code 0 |
 | `java StudentManager` (scripted full run) | exit 0, 14/14 cases as expected |
 | `java StudentGUI` | launches without exceptions |
 | Manual trace | Section 3 |

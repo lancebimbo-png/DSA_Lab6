@@ -121,8 +121,8 @@ java Lab6Tests
 Result:
 
 ```text
-Total checks: 41
-Passed: 41
+Total checks: 44
+Passed: 44
 Failed: 0
 RESULT: PASS
 ```
@@ -222,8 +222,21 @@ Student verification has **not** been performed as part of this implementation. 
 student still needs to:
 
 1. Read `README.md`, `Lab6Tests.java`, and this log.
-2. Run `javac *.java` then `java Lab6Tests` and confirm `41 passed, 0 failed`.
+2. Run `javac *.java` then `java Lab6Tests` and confirm `44 passed, 0 failed`.
 3. Run `java StudentManager` and try the menu operations, or review `test-run.log`.
 4. Study the viva question and follow-up answers in `README.md` Section 7.
 5. Submit `https://github.com/lancebimbo-png/DSA_Lab6` under the corresponding
    Google Classroom assignment.
+
+## Final revision (2026-11-12, reviewed with Claude before submission)
+
+Defects found and fixed after the first submission commit (`c82f336`):
+
+1. **Crash on bad grade input.** Typing a non-number at "Enter Grade" / "Enter new Grade" threw `InputMismatchException` and ended the program (`scanner.nextDouble()`). Added `StudentManager.readGrade(Scanner, String)`, which reads a line and re-asks until it parses. Menu cases 1 and 3 use it.
+2. **Case-sensitive name sort.** `compareTo` ordered all uppercase-first names before lowercase ones (`Zed` before `alice`). Changed to `compareToIgnoreCase`; names equal ignoring case stay in stable order.
+3. **README inconsistency.** The viva answer said "array doubling" while Section 5 says ~1.5× growth. Viva answer corrected.
+4. **Missing evidence files.** `test-input.txt` and `test-run.log` were not in the reviewed folder; regenerated from the README's 14 cases. Output matches the previously documented results. Added `test-input-badgrade.txt` / `test-run-badgrade.log` for fix 1.
+
+Tests added to `Lab6Tests.java` (no existing check changed): `sortByNameIgnoreCaseTests` (1 check) and `readGradeTests` (2 checks). Result: **44 checks, 44 passed, 0 failed**, exit 0. Scripted run `java StudentManager < test-input.txt` exit 0, output identical to the original 14-case run.
+
+The GitHub repo still holds the earlier commit until these changes are committed and pushed by the student.

@@ -1,5 +1,6 @@
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+import java.util.Scanner;
 
 public class Lab6Tests {
 
@@ -24,6 +25,8 @@ public class Lab6Tests {
         displayTests();
         sortByNameTests();
         sortByGradeTests();
+        sortByNameIgnoreCaseTests();
+        readGradeTests();
 
         System.setOut(out);
         out.println();
@@ -209,5 +212,25 @@ public class Lab6Tests {
                 "Equal grades keep their original order (stable sort)");
         check("Diana".equals(m.getStudents().get(0).getName()),
                 "sortByGrade reorders references only, names unchanged");
+    }
+
+    private static void sortByNameIgnoreCaseTests() {
+        StudentManager m = new StudentManager();
+        m.addStudent(new Student("1", "zed", 80));
+        m.addStudent(new Student("2", "Alice", 90));
+        m.addStudent(new Student("3", "bob", 70));
+        m.sortByName();
+        check("Alice".equals(m.getStudents().get(0).getName())
+                        && "bob".equals(m.getStudents().get(1).getName())
+                        && "zed".equals(m.getStudents().get(2).getName()),
+                "sortByName ignores upper/lower case (Alice, bob, zed)");
+    }
+
+    private static void readGradeTests() {
+        Scanner good = new Scanner("85.5\n");
+        check(StudentManager.readGrade(good, "") == 85.5, "readGrade accepts a valid number");
+        Scanner bad = new Scanner("abc\n\n90\n");
+        check(StudentManager.readGrade(bad, "") == 90.0,
+                "readGrade rejects non-numeric and blank input, then accepts a number");
     }
 }

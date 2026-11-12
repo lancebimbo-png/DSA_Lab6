@@ -73,7 +73,7 @@ public class StudentManager {
         System.out.println("--------------------");
     }
 
-    // 6. Sort by name, A to Z (anonymous Comparator, no lambdas)
+    // 6. Sort by name, A to Z, ignoring upper/lower case (anonymous Comparator, no lambdas)
     public void sortByName() {
         if (students.isEmpty()) {
             System.out.println("The list is empty. Nothing to sort.");
@@ -82,7 +82,7 @@ public class StudentManager {
         Collections.sort(students, new Comparator<Student>() {
             @Override
             public int compare(Student a, Student b) {
-                return a.getName().compareTo(b.getName());
+                return a.getName().compareToIgnoreCase(b.getName());
             }
         });
         System.out.println("Students sorted by name (A to Z).");
@@ -107,6 +107,19 @@ public class StudentManager {
             }
         });
         System.out.println("Students sorted by grade (highest to lowest).");
+    }
+
+    // Reads a grade from the scanner; keeps asking until the user types a valid number
+    public static double readGrade(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String line = scanner.nextLine().trim();
+            try {
+                return Double.parseDouble(line);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid grade. Please enter a number.");
+            }
+        }
     }
 
     // Main method with the Scanner menu
@@ -144,9 +157,7 @@ public class StudentManager {
                     String id = scanner.nextLine();
                     System.out.print("Enter Name: ");
                     String name = scanner.nextLine();
-                    System.out.print("Enter Grade: ");
-                    double grade = scanner.nextDouble();
-                    scanner.nextLine(); // consume the leftover newline
+                    double grade = readGrade(scanner, "Enter Grade: ");
                     manager.addStudent(new Student(id, name, grade));
                     break;
 
@@ -164,9 +175,7 @@ public class StudentManager {
                 case 3:
                     System.out.print("Enter ID: ");
                     String updId = scanner.nextLine();
-                    System.out.print("Enter new Grade: ");
-                    double newGrade = scanner.nextDouble();
-                    scanner.nextLine(); // consume the leftover newline
+                    double newGrade = readGrade(scanner, "Enter new Grade: ");
                     manager.updateGrade(updId, newGrade);
                     break;
 
